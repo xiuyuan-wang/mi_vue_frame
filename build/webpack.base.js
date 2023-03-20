@@ -4,6 +4,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const { VueLoaderPlugin }=require("vue-loader")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const path = require("path");
 const resolve = (dir) => path.resolve(__dirname, dir);
 module.exports = {
@@ -21,6 +24,12 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "css/chunk.[name].css",
       ignoreOrder: true,
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
   optimization: {

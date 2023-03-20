@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --hot --open --config build/webpack.dev.js",
     "start": "webpack",
     "type-check": "vue-tsc --noEmit",
-    "vite": "vite",
+    "vite": "vite --mode development",
     "vite-build": "run-p type-check vite-build-only",
     "vite-build-only": "vite build",
     "vite-preview": "vite preview"
@@ -51,6 +51,8 @@
     "thread-loader": "^3.0.4",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1",
     "vite": "^4.1.0",
     "vue-loader": "^17.0.1",
     "vue-tsc": "^1.0.24",
